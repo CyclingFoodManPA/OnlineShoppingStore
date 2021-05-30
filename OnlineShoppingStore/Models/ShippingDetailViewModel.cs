@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineShoppingStore.Models
 {
-    public class ShippingDetail
+    public class ShippingDetailViewModel
     {
         public int ShippingDetailId { get; set; }
         public DateTime DateCreated { get; set; }
@@ -27,8 +27,8 @@ namespace OnlineShoppingStore.Models
         [Required]
         public string PaymentTypeId { get; set; }
 
-        public virtual Member Member { get; set; }
+        public virtual MemberViewModel Member { get; set; }
 
-        public virtual PaymentType PaymentType { get; set; }
+        public virtual PaymentTypeViewModel PaymentType { get; set; }
     }
 }

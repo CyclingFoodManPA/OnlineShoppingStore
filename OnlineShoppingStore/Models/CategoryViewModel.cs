@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineShoppingStore.Models
 {
-    public class Category
+    public class CategoryViewModel
     {
-        public Category()
+        public CategoryViewModel()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<ProductViewModel>();
         }
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Category Name Required")]
@@ -17,7 +17,7 @@ namespace OnlineShoppingStore.Models
         public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ProductViewModel> Products { get; set; }
 
         public override string ToString()
         {

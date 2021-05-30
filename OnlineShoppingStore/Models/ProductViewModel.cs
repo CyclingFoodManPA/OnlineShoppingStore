@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineShoppingStore.Models
 {
-    public class Product
+    public class ProductViewModel
     {
         public int ProductId { get; set; }
 
@@ -37,7 +37,7 @@ namespace OnlineShoppingStore.Models
         [Range(typeof(decimal), "1", "200000", ErrorMessage = "invalid Price")]
         public decimal Price { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual CategoryViewModel Category { get; set; }
 
         public override string ToString()
         {

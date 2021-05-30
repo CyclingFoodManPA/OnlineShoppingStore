@@ -178,11 +178,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\PaymentType.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ShippingDetail.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\MemberViewModel.cs" />
+    <Compile Include="Models\PaymentTypeViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\ShippingDetailViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

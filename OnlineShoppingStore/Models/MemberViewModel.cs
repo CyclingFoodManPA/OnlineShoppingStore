@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace OnlineShoppingStore.Models
 {
-    public class Member
+    public class MemberViewModel
     {
-        public Member()
+        public MemberViewModel()
         {
-            this.ShippingDetails = new HashSet<ShippingDetail>();
+            this.ShippingDetails = new HashSet<ShippingDetailViewModel>();
         }
 
         public int MemberId { get; set; }
@@ -21,6 +21,6 @@ namespace OnlineShoppingStore.Models
         public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
 
-        public virtual ICollection<ShippingDetail> ShippingDetails { get; set; }
+        public virtual ICollection<ShippingDetailViewModel> ShippingDetails { get; set; }
     }
 }

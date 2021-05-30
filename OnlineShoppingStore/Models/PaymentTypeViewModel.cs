@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace OnlineShoppingStore.Models
 {
-    public class PaymentType
+    public class PaymentTypeViewModel
     {
-        public PaymentType()
+        public PaymentTypeViewModel()
         {
-            this.ShippingDetails = new HashSet<ShippingDetail>();
+            this.ShippingDetails = new HashSet<ShippingDetailViewModel>();
         }
 
         public int PaymentTypeId { get; set; }
@@ -16,6 +16,6 @@ namespace OnlineShoppingStore.Models
         public DateTime DateModified { get; set; }
         public string PaymentTypeName { get; set; }
 
-        public virtual ICollection<ShippingDetail> ShippingDetails { get; set; }
+        public virtual ICollection<ShippingDetailViewModel> ShippingDetails { get; set; }
     }
 }
