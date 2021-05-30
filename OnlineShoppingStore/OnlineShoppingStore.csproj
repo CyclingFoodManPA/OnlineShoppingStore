@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,10 +128,60 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\Cart.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CartStatu.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Category.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Member.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\MemberRole.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OnlineShoppingStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineShoppingStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OnlineShoppingStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OnlineShoppingStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnlineShoppingStoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PaymentType.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Product.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Role.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\ShippingDetail.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SlideImage.cs">
+      <DependentUpon>OnlineShoppingStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ShippingDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +190,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\OnlineShoppingStoreLayout.css" />
+    <Content Include="Context\OnlineShoppingStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OnlineShoppingStoreModel.Context.cs</LastGenOutput>
+      <DependentUpon>OnlineShoppingStoreModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Context\OnlineShoppingStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnlineShoppingStoreModel.edmx</DependentUpon>
+      <LastGenOutput>OnlineShoppingStoreModel.cs</LastGenOutput>
+    </Content>
     <Content Include="DBScripts\OnlineShoppingStore.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -139,6 +207,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Context\OnlineShoppingStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OnlineShoppingStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Context\OnlineShoppingStoreModel.edmx.diagram">
+      <DependentUpon>OnlineShoppingStoreModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -167,7 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -181,6 +255,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

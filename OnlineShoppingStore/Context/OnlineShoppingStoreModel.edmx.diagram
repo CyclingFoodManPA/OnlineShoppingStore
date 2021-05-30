@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05186f851aa647329e223ab0305859b4" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.Cart" Width="1.5" PointX="10.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.CartStatu" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.Category" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.Member" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.MemberRole" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.PaymentType" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.Product" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.Role" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.ShippingDetail" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingStoreModel.SlideImage" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShoppingStoreModel.FK__Cart__ProductId__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingStoreModel.FK__Product__Categor__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingStoreModel.FK__ShippingD__Membe__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingStoreModel.FK__ShippingD__Payme__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
